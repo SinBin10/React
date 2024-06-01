@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 /*
 This is the core of react meaning that react was originally made to be usd this way but the nested structures of componenents you see made the code a bit too complex to understand so this approach was discarded
 
