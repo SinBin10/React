@@ -14,9 +14,15 @@ This is the core of react meaning that react was originally made to be usd this 
 //when using the return keyword you wrap inside curly brackets as it represents a function
 
 //react componenent -> a function which returns JSX
+
+const Title = ()=>{
+  return <h1>React Functional component</h1>
+}
 const Heading = ()=>(
   <div id="container">
+    {Title()}
     <Title />
+    <Title></Title>
     <h1 id="heading">Binay react component</h1>
   </div>
 );
