@@ -46,17 +46,16 @@ const Heading = () => {
   );
 };
 
-const Card = (props) => {
-  console.log(props)
+const Card = ({ dish, price, rating }) => {
   return (
     <div className="card">
       <div>
         <img className="card-img" src={biryani} alt="biryani" />
       </div>
       <div className="card-body">
-        <h2>{props.dish}</h2>
-        <p>{props.price}</p>
-        <p>{props.rating + " out of 5"}</p>
+        <h2>{dish}</h2>
+        <p>{price}</p>
+        <p>{rating + " out of 5"}</p>
         <p>30 minutes</p>
       </div>
     </div>
