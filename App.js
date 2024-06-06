@@ -18,7 +18,7 @@ import biryani from "/Images/biryani.jpeg";
 
 const List = () => {
   return (
-    <ul class="list">
+    <ul className="list">
       <li>
         <a href="#">About us</a>
       </li>
@@ -46,16 +46,17 @@ const Heading = () => {
   );
 };
 
-const Card = () => {
+const Card = (props) => {
+  console.log(props)
   return (
     <div className="card">
       <div>
         <img className="card-img" src={biryani} alt="biryani" />
       </div>
       <div className="card-body">
-        <h2>Biryani</h2>
-        <p>Rs.120</p>
-        <p>2.3 out of 5</p>
+        <h2>{props.dish}</h2>
+        <p>{props.price}</p>
+        <p>{props.rating + " out of 5"}</p>
         <p>30 minutes</p>
       </div>
     </div>
@@ -67,23 +68,13 @@ const Body = () => {
     <div>
       <input
         type="text"
-        class="search"
+        className="search"
         name="search"
         placeholder="Enter you favourite food..."
       />
       <div className="card-container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card dish="Biryani" price="Rs.120" rating="2.3" />
+        <Card dish="Fried Rice" price="Rs.100" rating="4" />
       </div>
     </div>
   );
