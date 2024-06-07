@@ -79,7 +79,7 @@ const resObj = [
                 "Kebabs",
                 "Fast Food"
             ],
-            "avgRating": 4.5,
+            "avgRating": 2.5,
             "parentId": "4413",
             "avgRatingString": "4.5",
             "totalRatingsString": "5K+",
@@ -283,7 +283,7 @@ const resObj = [
                 "Ice Cream",
                 "Healthy Food"
             ],
-            "avgRating": 4.6,
+            "avgRating": 3.9,
             "veg": true,
             "parentId": "236673",
             "avgRatingString": "4.6",
@@ -378,7 +378,7 @@ const resObj = [
                 "Ice Cream",
                 "Desserts"
             ],
-            "avgRating": 4.5,
+            "avgRating": 1.5,
             "veg": true,
             "parentId": "272044",
             "avgRatingString": "4.5",
@@ -690,7 +690,7 @@ const resObj = [
                 "Bakery",
                 "Ice Cream"
             ],
-            "avgRating": 4.6,
+            "avgRating": 1.6,
             "parentId": "195515",
             "avgRatingString": "4.6",
             "totalRatingsString": "1K+",
@@ -1329,7 +1329,7 @@ const resObj = [
                 "Bakery",
                 "Fast Food"
             ],
-            "avgRating": 4.5,
+            "avgRating": 2.5,
             "parentId": "1",
             "avgRatingString": "4.5",
             "totalRatingsString": "1K+",
@@ -1514,7 +1514,7 @@ const resObj = [
                 "South Indian",
                 "Ice Cream"
             ],
-            "avgRating": 4.6,
+            "avgRating": 3.6,
             "parentId": "10442",
             "avgRatingString": "4.6",
             "totalRatingsString": "1K+",
