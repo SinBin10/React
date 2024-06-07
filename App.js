@@ -1672,7 +1672,7 @@ const Body = () => {
         placeholder="Enter you favourite food..."
       />
       <div className="card-container">
-        {resObj.map((restaurant) => <Card resData={restaurant} />)}
+        {resObj.map((restaurant) => <Card key={restaurant.info.id} resData={restaurant} />)}
       </div>
     </div>
   );
