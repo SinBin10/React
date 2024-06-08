@@ -2,6 +2,8 @@ import Card from "./Card";
 //named import
 import { useState, useEffect } from "react";
 
+import Shimmer from "./shimmer";
+
 const Body = () => {
     const [resList, setResList] = useState([]);
     useEffect(() => {
@@ -14,6 +16,20 @@ const Body = () => {
         setResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
 
+    if (resList.length === 0)
+        return (<div className="shimmer-container">
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+            <Shimmer />
+        </div>)
     return (
         <div>
             <input
