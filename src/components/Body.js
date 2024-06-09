@@ -16,21 +16,10 @@ const Body = () => {
         setResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
 
-    if (resList.length === 0)
-        return (<div className="shimmer-container">
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-            <Shimmer />
-        </div>)
-    return (
+    //conditional rendering
+    return resList.length === 0 ? (<div className="shimmer-container">
+        <Shimmer />
+    </div>) : (
         <div>
             <input
                 type="text"
