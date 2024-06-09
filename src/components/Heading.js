@@ -1,6 +1,8 @@
 import { LOGO_URL } from "../utils/constants";
+import { useState } from "react";
 
 const Heading = () => {
+    const [Login, setLogin] = useState("Login");
     return (
         <div className="navbar">
             <div>
@@ -20,6 +22,7 @@ const Heading = () => {
                     <a href="#">Cart</a>
                 </li>
             </ul>
+            <button onClick={() => { Login === "Login" ? setLogin("Logout") : setLogin("Login") }} className="login">{Login}</button>
         </div>
     );
 };
