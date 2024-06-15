@@ -7,6 +7,7 @@ import Shimmer from "./shimmer";
 const Body = () => {
     const [resList, setResList] = useState([]);
     const [search, setSearch] = useState("");
+    const [copylist, setCopyList] = useState([]);
     useEffect(() => {
         fetchdata();
     }, []);
@@ -15,6 +16,7 @@ const Body = () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.51800&lng=88.38320&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         setResList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+        setCopyList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
 
     //conditional rendering
@@ -30,7 +32,7 @@ const Body = () => {
                     onChange={(e) => { setSearch(e.target.value) }}
                 />
                 <button onClick={() => {
-                    const list = resList.filter((res) => { return res.info.name.toLowerCase().includes(search.toLowerCase()) });
+                    const list = copylist.filter((res) => { return res.info.name.toLowerCase().includes(search.toLowerCase()) });
                     setResList(list);
                 }}>Search</button>
             </div>
