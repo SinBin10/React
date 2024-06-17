@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import Heading from "./src/components/Heading";
 import Body from "./src/components/Body";
 import About from "./src/components/About";
+import Contact from "./src/components/Contact";
+import Error from "./src/components/Error";
 //used for providing routes to application
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -34,7 +36,12 @@ const appRouter = createBrowserRouter([
   },
   {
     path: '/',
-    element: <App />
+    element: <App />,
+    errorElement: <Error />
+  },
+  {
+    path: '/contact',
+    element: <Contact />
   }
 ]);
 
