@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 
@@ -5,21 +6,25 @@ const Heading = () => {
     const [Login, setLogin] = useState("Login");
     return (
         <div className="navbar">
-            <div>
+            {/*while routing through multiple pages we dont use anchor tag in react why ?
+  because it loads the page completely which takes a huge performance hit
+  that is why we use "Link to" provided by react-router-dom package
+  which does not reload the whole page.*/}
+            <Link to="/">
                 <img className="logo" src={LOGO_URL} alt="logo" />
-            </div>
+            </Link>
             <ul className="list">
                 <li>
-                    <a href="#">About us</a>
+                    <Link to="/about">About us</Link>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <Link to="/contact">Contact</Link>
                 </li>
                 <li>
-                    <a href="#">Profile</a>
+                    <Link to="#">Profile</Link>
                 </li>
                 <li>
-                    <a href="#">Cart</a>
+                    <Link to="#">Cart</Link>
                 </li>
             </ul>
             <button onClick={() => { Login === "Login" ? setLogin("Logout") : setLogin("Login") }} className="login">{Login}</button>

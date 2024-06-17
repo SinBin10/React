@@ -6,8 +6,7 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 //used for providing routes to application
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 /*
   normal export=>(used for single component in a file)
@@ -24,25 +23,40 @@ const App = () => {
   return (
     <>
       <Heading />
-      <Body />
+      <Outlet />
     </>
   );
 };
-
+/*
+  create browserrouter is used to create routes for your application
+  react is called also called a single page application because the whole page is not reloaded 
+  when traversed through multiple web pages only the some components are rendered
+*/
 const appRouter = createBrowserRouter([
+  /*
+  we are putting everything into children key so that we can use the outlet component
+  which navigates through children.
+  this helping in reloading only a part of the page like here we replace the body and keep the header component at all times
+  */
   {
-    path: '/about',
-    element: < About />
-  },
-  {
-    path: '/',
+    path: "/",
     element: <App />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/',
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
   },
-  {
-    path: '/contact',
-    element: <Contact />
-  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
