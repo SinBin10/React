@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./src/components/Heading";
 import Body from "./src/components/Body";
+import About from "./src/components/About";
+//used for providing routes to application
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 
 /*
   normal export=>(used for single component in a file)
@@ -23,6 +27,17 @@ const App = () => {
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: '/about',
+    element: < About />
+  },
+  {
+    path: '/',
+    element: <App />
+  }
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<App />);
+root.render(<RouterProvider router={appRouter} />);
