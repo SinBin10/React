@@ -5,6 +5,7 @@ import Body from "./src/components/Body";
 import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
+import Menu from "./src/components/Menu";
 //used for providing routes to application
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -55,6 +56,11 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        // resId will change depending upon the restaurants so we have it as a dynamic value
+        path: "/restaurants/:resID",
+        element: <Menu />
+      }
     ],
   },
 ]);

@@ -45,3 +45,9 @@ page loads => page renders = > make call for API and get data.
 
 CORS:-
 while making an API call from your local host to swiggy api the call is blocked by the browser due to call made to a different domain name. You can solve this by downloading a browser extension.
+
+# Routing
+
+---Client side routing -> we have implemented this in our app it does not make a different network call for different pages all the components are already loaded into our app, all it does is just shift some components.
+
+---Server side routing -> In this type of routing every time a new page is loaded the whole page is reloaded.
