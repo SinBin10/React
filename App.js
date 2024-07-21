@@ -45,22 +45,21 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: '/',
-        element: <Body />
+        path: "/",
+        element: <Body />,
       },
       {
         path: "/about",
-        element: <About />
+        element: <About />,
       },
       {
         path: "/contact",
         element: <Contact />,
       },
       {
-        // resId will change depending upon the restaurants so we have it as a dynamic value
         path: "/restaurants/:resID",
-        element: <Menu />
-      }
+        element: <Menu />,
+      },
     ],
   },
 ]);
