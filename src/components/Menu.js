@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useFetchData from "../utils/useFetchData";
 // import Shimmer from "./shimmer";
 /*
 this page will use dynamic routing and get 
@@ -41,24 +41,9 @@ dynamic data to display information about a restaurant
 // }
 
 const Menu = () => {
-  const [menu, setMenu] = useState([]);
   const resID = useParams();
   console.log(resID.resID);
-  useEffect(() => {
-    fetchmenu();
-  }, []);
-
-  async function fetchmenu() {
-    const menudata = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.51800&lng=88.38320&restaurantId=" +
-        resID.resID
-      // "&catalog_qa=undefined&submitAction=ENTER"
-    );
-    console.log(menudata);
-    const menujson = await menudata.json();
-    console.log(menujson);
-    setMenu(menujson.data.cards);
-  }
+  const menu = useFetchData(resID);
   if (menu.length === 0) return <h1>Fetching...</h1>;
   return (
     <>
