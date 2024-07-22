@@ -2,6 +2,7 @@ import Card from "./Card";
 import { Link } from "react-router-dom";
 //named import
 import { useState, useEffect } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 import Shimmer from "./shimmer";
 
@@ -9,6 +10,7 @@ const Body = () => {
   const [resList, setResList] = useState([]);
   const [search, setSearch] = useState("");
   const [copylist, setCopyList] = useState([]);
+  const isOnline = useOnlineStatus();
   useEffect(() => {
     fetchdata();
   }, []);
@@ -28,6 +30,8 @@ const Body = () => {
     );
   };
 
+  if (isOnline === false)
+    return <h1>You're not connected to the internet!!</h1>;
   //conditional rendering
   return resList.length === 0 ? (
     <div className="shimmer-container">
@@ -68,8 +72,12 @@ const Body = () => {
       </button>
       <div className="card-container">
         {resList.map((restaurant) => (
-          <Link className="card-link" to={"/restaurants/" + restaurant.info.id}>
-            <Card key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            className="card-link"
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <Card resData={restaurant} />
           </Link>
         ))}
       </div>
