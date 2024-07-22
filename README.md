@@ -51,3 +51,7 @@ while making an API call from your local host to swiggy api the call is blocked 
 ---Client side routing -> we have implemented this in our app it does not make a different network call for different pages all the components are already loaded into our app, all it does is just shift some components.
 
 ---Server side routing -> In this type of routing every time a new page is loaded the whole page is reloaded.
+
+# Lazy Loading(Dynamic loading, chunking, Dynamic import, code splliting, on demand loading)
+
+-- used in websites with a large number of components, some major components are loaded on demand.

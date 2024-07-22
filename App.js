@@ -1,9 +1,9 @@
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./src/components/Heading";
 import Body from "./src/components/Body";
 import About from "./src/components/About";
-import Contact from "./src/components/Contact";
+// import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 import Menu from "./src/components/Menu";
 //used for providing routes to application
@@ -20,6 +20,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
   import { component } from "path";
 
 */
+const Contact = lazy(() => import("./src/components/Contact"));
 const App = () => {
   return (
     <>
