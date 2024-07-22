@@ -7,32 +7,32 @@ const Heading = () => {
   const [Login, setLogin] = useState("Login");
   const isOnline = useOnlineStatus();
   return (
-    <div className="navbar">
+    <div className="flex items-center justify-between">
       {/*while routing through multiple pages we dont use anchor tag in react why ?
   because it loads the page completely which takes a huge performance hit
   that is why we use "Link to" provided by react-router-dom package
   which does not reload the whole page.*/}
-      <Link to="/">
-        <img className="logo" src={LOGO_URL} alt="logo" />
+      <Link className="w-20" to="/">
+        <img src={LOGO_URL} alt="logo" />
       </Link>
-      <ul className="list">
-        <li>
+      <ul className="flex items-center">
+        <li className="w-6 h-6">
           {isOnline === true ? (
-            <div className="indicator online"></div>
+            <div className="h-full rounded-full bg-green-600"></div>
           ) : (
-            <div className="indicator offline"></div>
+            <div className="h-full rounded-full bg-red-600"></div>
           )}
         </li>
-        <li>
+        <li className="mx-10">
           <Link to="/about">About us</Link>
         </li>
-        <li>
+        <li className="mx-10">
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
+        <li className="mx-10">
           <Link to="#">Profile</Link>
         </li>
-        <li>
+        <li className="mx-10">
           <Link to="#">Cart</Link>
         </li>
       </ul>
