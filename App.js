@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Heading from "./src/components/Heading";
 import Body from "./src/components/Body";
@@ -55,7 +55,14 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          //when not adding suspense react immediately loads the
+          //contact component but since it is being fetched through lazy
+          //loading the file is not available yet hence the error not found
+          <Suspense fallback={<h1>Lazy Loading...</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resID",
